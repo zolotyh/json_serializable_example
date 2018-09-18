@@ -1,5 +1,6 @@
 # BUILD
 
+* `pub get`
 * `pub run webdev build` 
 * `cd build`
 * `python3 -m http.server 3000`
