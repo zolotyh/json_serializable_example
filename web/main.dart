@@ -1,14 +1,23 @@
 @JS()
 library example;
 
+import 'dart:async';
 import 'dart:html';
+
 import 'package:js/js.dart';
 
-void main() {
-  String json = '[{"firstName": "Alexey", "lastName": "Zolotykh"}]';
-  List<dynamic> users = parse(json);
-  print((users.first as User).firstName);
-  print(stringify(users));
+Future main() async {
+  final json = await HttpRequest.getString('big.json');
+
+  final now = new DateTime.now();
+  List<User> users = parse(json).cast<User>();
+  print(DateTime.now().difference(now).inMilliseconds);
+
+  document.body.addEventListener('click', (e){
+    print(users);
+  });
+
+
 }
 
 @JS('JSON.parse')
