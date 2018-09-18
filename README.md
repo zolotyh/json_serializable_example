@@ -1,4 +1,6 @@
-An absolute bare-bones web app.
+# BUILD
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+* `pub run webdev build` 
+* `cd build`
+* `python3 -m http.server 3000`
+* `open http://localhost:3000` or just open your favorite browser
